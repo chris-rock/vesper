@@ -4,15 +4,15 @@
 
 `vesper` is a collection of shell functions to make it super easy to generate valid http responses. Vesper is not a web server itself, its just the framework to parse http requests and generate valid responses.
 
-## This is craszy, who needs a http framework for unix shells?
+## This is crazy, who needs a http framework for unix shell?
 
-That is a very good question! If you would have asked me that question a year ago, I would have argued: nobody. Now, I am not sure anymore. How will sh/bash scripts work in the future of cloud and serverless. Should we even do it?
+That is a very good question! If you would have asked me that question a year ago, I would have argued: nobody. Now, I am not sure anymore. How will sh/bash scripts work in the future of cloud and serverless?
 
 ## Get Started
 
 **Hello World**
 
-```
+```bash
 source "vesper.sh"
 
 # parses the http request
@@ -26,7 +26,7 @@ echo $HTTP_REQUEST_URI
 
 Start the server
 
-```
+```bash
 ncat -lk -p 8081 --sh-exec examples/router.sh
 ```
 
@@ -43,7 +43,7 @@ To see all the examples in place justs run:
 
 Start the server
 
-```
+```bash
 # download the test pdf
 wget http://tiswww.case.edu/php/chet/bash/rose94.pdf
 
@@ -106,3 +106,21 @@ At this point, its only tested with http GET methods
 
 * What is the best way to handle execution errors?
 * What is the stable way to verify http query params?
+
+## Authors
+
+* **Christoph Hartmann** - *Research & Prototype* - [chris-rock](https://github.com/chris-rock)
+
+See also the list of [contributors](https://github.com/chris-rock/vesper/contributors) who participated in this project.
+
+## Sponsors
+
+The research and the development was sponsored by [mondoo](https://mondoo.io/)
+
+## License
+
+This project is licensed under the Apache 2 License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+[shinatra](https://github.com/benrady/shinatra) and [bashttpd](https://github.com/avleen/bashttpd) also prototyped around http in bash.
