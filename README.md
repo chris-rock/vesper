@@ -1,12 +1,12 @@
-# Vesper - HTTP Framework for Unix Shell
+# Vesper - HTTP Framework for Bash Shell
 
 ![Vesper Logo](assets/logo.png)
 
-`vesper` is a collection of shell functions to make it super easy to generate valid http responses. Vesper is not a web server itself, its just the framework to parse http requests and generate valid responses.
+`vesper` is a collection of shell functions to make it super easy to generate valid http responses. Vesper is not a web server itself, its just the framework to parse http requests and generate valid responses. 
 
 ## This is crazy, who needs a http framework for unix shell?
 
-That is a very good question! If you would have asked me that question a year ago, I would have argued: nobody. Now, I am not sure anymore. How will sh/bash scripts work in the future of cloud and serverless?
+That is a very good question! If you would have asked me that question a year ago, I would have argued: nobody. Now, I am not sure anymore. How will sh/bash scripts work in the future of cloud and serverless? Consider reading my blog [Introducing Vesper - HTTP Framework for Unix Shell](https://lollyrock.com/posts/vesper-intro-bash-shell-http-framework/).
 
 ## Get Started
 
@@ -24,9 +24,34 @@ echo 'Hello World'
 echo $HTTP_REQUEST_URI
 ```
 
-Start the server
+**Generate an Image**
+
+```bassh
+source "vesper.sh"
+
+http_response StatusOK "image/jpeg"
+echo "James Bond" | convert -font Arial -pointsize 72 -fill white -background black text:- -trim png:- >&1
+```
+
+**Seeing is believing**
 
 ```bash
+# hello world example
+ncat -lk -p 8081 --sh-exec examples/helloworld.sh
+
+# json example
+ncat -lk -p 8081 --sh-exec examples/json.sh
+
+# image example
+ncat -lk -p 8081 --sh-exec examples/image.sh
+
+# pdf example
+ncat -lk -p 8081 --sh-exec examples/pdf.sh
+
+# file streaming example
+ncat -lk -p 8081 --sh-exec examples/file_stream.sh
+
+# router example
 ncat -lk -p 8081 --sh-exec examples/router.sh
 ```
 
@@ -34,8 +59,8 @@ ncat -lk -p 8081 --sh-exec examples/router.sh
 
  * [Text](./examples/helloworld.sh)
  * [JSON](./examples/json.sh)
- * [PDF](./examples/pdf.sh)
  * [Image](./examples/image.sh)
+ * [PDF](./examples/pdf.sh)
  * [File Stream](./examples/file_stream.sh)
  * [Router](./examples/router.sh)
 
