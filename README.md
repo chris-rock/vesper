@@ -117,7 +117,7 @@ Popular web frameworks like [martini](https://github.com/go-martini/martini) and
 
 **Is vesper production ready?**
 
-Its build on tooling that is around for decades. The foundation is battle-tested. While this is the caae, its not designed for web-scale workloads.
+Its build on tooling that is around for decades. The foundation is battle-tested. While this is the case, its not designed for web-scale workloads.
 
 **Should I switch from my popular http framework X to vesper?**
 
